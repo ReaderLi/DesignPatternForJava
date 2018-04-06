@@ -11,7 +11,7 @@ public class RemoteControlTest {
         Stereo kitchenStereo = new Stereo("Kitchen Room");
 
         //create all light command
-        LightOnCommand livingRooomLightOn =
+        LightOnCommand livingRoomLightOn =
                 new LightOnCommand(livingRoomLight);
         LightOffCommand livingRoomLightOff =
                 new LightOffCommand(livingRoomLight);
@@ -21,7 +21,7 @@ public class RemoteControlTest {
                 new LightOffCommand(kitchenLight);
 
         //create all stereo command
-        StereoOnCommand livingRooomStereoOn =
+        StereoOnCommand livingRoomStereoOn =
                 new StereoOnCommand(livingRoomStereo);
         StereoOffCommand livingRoomStereoOff =
                 new StereoOffCommand(livingRoomStereo);
@@ -30,9 +30,9 @@ public class RemoteControlTest {
         StereoOffCommand kitchenStereoOff =
                 new StereoOffCommand(kitchenStereo);
 
-        remoteControl.setCommand(0,livingRooomLightOn,livingRoomLightOff);
+        remoteControl.setCommand(0,livingRoomLightOn,livingRoomLightOff);
         remoteControl.setCommand(1,kitchenLightOn,kitchenLightOff);
-        remoteControl.setCommand(2,livingRooomStereoOn,livingRoomStereoOff);
+        remoteControl.setCommand(2,livingRoomStereoOn,livingRoomStereoOff);
         remoteControl.setCommand(3,kitchenStereoOn,kitchenStereoOff);
 
         System.out.println(remoteControl.toString());
