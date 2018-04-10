@@ -1,20 +1,14 @@
 package com.lrd.IteratorPattern;
 
-<<<<<<< HEAD
 import java.util.Iterator;
 
 public class Waitress {
     Menu pancakeHouseMenu;
     Menu dinerMenu;
 
-    public Waitress(Menu pancakeHouseMenu,Menu dinerMenu) {
-=======
-public class Waitress {
-    PancakeHouseMenu pancakeHouseMenu;
-    DinerMenu dinerMenu;
 
     public Waitress(PancakeHouseMenu pancakeHouseMenu,DinerMenu dinerMenu) {
->>>>>>> b1e929a690aba299c689566aea971e61abf037f8
+
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
     }
