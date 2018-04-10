@@ -1,9 +1,14 @@
 package com.lrd.IteratorPattern;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Iterator;
 
 public class DinerMenu implements Menu {
+=======
+
+public class DinerMenu {
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 
     private static final int MAX_ITEMS = 6;
     private int numberOfItems = 0;
@@ -46,4 +51,8 @@ public class DinerMenu implements Menu {
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8

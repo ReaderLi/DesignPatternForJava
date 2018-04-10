@@ -1,9 +1,14 @@
 package com.lrd.IteratorPattern;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Iterator;
 
 public class PancakeHouseMenu implements Menu {
+=======
+
+public class PancakeHouseMenu {
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 
     ArrayList<MenuItem> menuItems;
 
@@ -38,10 +43,16 @@ public class PancakeHouseMenu implements Menu {
         menuItems.add(menuItem);
     }
 
+<<<<<<< HEAD
     public Iterator<MenuItem> createIterator() {
         //return new PancakeHouseMenuIterator(menuItems);
         return menuItems.iterator();
     }
 
 
+=======
+    public Iterator createIterator() {
+        return new PancakeHouseMenuIterator(menuItems);
+    }
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 }

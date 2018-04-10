@@ -1,7 +1,10 @@
 package com.lrd.IteratorPattern;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Iterator;
+=======
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 
 public class PancakeHouseMenuIterator implements Iterator {
 
@@ -30,6 +33,7 @@ public class PancakeHouseMenuIterator implements Iterator {
         position = position + 1;
         return menuItem;
     }
+<<<<<<< HEAD
 
     @Override
     public void remove() {
@@ -46,4 +50,6 @@ public class PancakeHouseMenuIterator implements Iterator {
             menuItems.set(position-1,null);
         }
     }
+=======
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 }

@@ -1,7 +1,10 @@
 package com.lrd.IteratorPattern;
 
+<<<<<<< HEAD
 import java.util.Iterator;
 
+=======
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
 public class DinerMenuIterator implements Iterator {
 
     MenuItem[] menuItems;
@@ -31,6 +34,7 @@ public class DinerMenuIterator implements Iterator {
         position++;
         return menuItem;
     }
+<<<<<<< HEAD
 
     @Override
     public void remove() {
@@ -54,3 +58,6 @@ public class DinerMenuIterator implements Iterator {
 
 
 }
+=======
+}
+>>>>>>> b1e929a690aba299c689566aea971e61abf037f8
