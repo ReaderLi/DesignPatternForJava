@@ -7,7 +7,7 @@ public class Waitress {
     Menu dinerMenu;
 
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu,DinerMenu dinerMenu) {
+    public Waitress(Menu pancakeHouseMenu,Menu dinerMenu) {
 
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
