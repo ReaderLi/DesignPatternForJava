@@ -27,9 +27,14 @@ public class DinerMenuIterator implements Iterator {
     @Override
     public Object next() {
 
-        MenuItem menuItem = menuItems[position];
-        position++;
-        return menuItem;
+        if (hasNext()) {
+            MenuItem menuItem = menuItems[position];
+            position++;
+            return menuItem;
+        }else {
+            return null;
+        }
+
     }
 
     @Override

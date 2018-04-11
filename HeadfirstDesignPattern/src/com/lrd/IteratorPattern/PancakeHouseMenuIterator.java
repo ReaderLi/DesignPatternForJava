@@ -27,9 +27,14 @@ public class PancakeHouseMenuIterator implements Iterator {
 
     @Override
     public Object next() {
-        MenuItem menuItem = menuItems.get(position);
-        position = position + 1;
-        return menuItem;
+
+        if (hasNext()) {
+            MenuItem menuItem = menuItems.get(position);
+            position = position + 1;
+            return menuItem;
+        }else {
+            return null;
+        }
     }
 
     @Override
