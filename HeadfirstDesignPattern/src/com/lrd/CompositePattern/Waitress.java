@@ -19,6 +19,10 @@ public class Waitress {
         System.out.println("\nVEGETARIAN MENU\n----");
         while (iterator.hasNext()) {
             MenuComponent menuComponent = iterator.next();
+
+//            while (menuComponent instanceof Menu){
+//                menuComponent = iterator.next();
+//            }  //代替try catch
             try {
                 if (menuComponent.isVegetarian()) {
                     menuComponent.print();
