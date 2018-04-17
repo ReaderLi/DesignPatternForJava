@@ -3,80 +3,45 @@ package com.lrd.StatePattern;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class GumballMachine {
-    //糖果机的四个状态
-    final static int SOLD_OUT = 0;       //售罄
-    final static int NO_QUARTER = 1;     //没有25分钱
-    final static int HAS_QUARTER = 2;    //有25分钱
-    final static int SOLD = 3;           //售出
 
-    private int state = SOLD_OUT;
+    HasQuarterState hasQuarterState;
+    NoQuarterState noQuarterState;
+    SoldOutState soldOutState;
+    SoldState soldState;
+
+
+    private State state = soldOutState;
     private int count = 0;         //糖果数目
 
     public GumballMachine(int count){
+
+        hasQuarterState = new HasQuarterState(this);
+        noQuarterState = new NoQuarterState(this);
+        soldOutState = new SoldOutState(this);
+        soldState = new SoldState(this);
+
         this.count = count;
         if (count > 0) {
-            state = NO_QUARTER;
+            state = noQuarterState;
         }
     }
 
     public void insertQuarter() {
-        if (state == HAS_QUARTER) {
-            System.out.println("You can't insert another quarter");
-        }else if (state == NO_QUARTER) {
-            state = HAS_QUARTER;
-            System.out.println("You insert a quarter");
-        }else if (state == SOLD_OUT) {
-            System.out.println("You can't insert a quarter,the machine is sold out");
-        }else if (state == SOLD) {
-            System.out.println("Please wait,we're already giving you a gumball");
-        }
+        state.insertQuarter();
+
     }
 
     public void ejectQuarter() {
-        if (state == HAS_QUARTER) {
-            System.out.println("Quarter returned");
-            state = NO_QUARTER;
-        }else if (state == NO_QUARTER) {
-            System.out.println("You haven't inserted a quarter");
-        }else if (state == SOLD) {
-            System.out.println("Sorry,you already turned the crank");
-        }else if (state == SOLD_OUT) {
-            System.out.println("You can't eject,you haven't inserted a quarter yet");
-        }
+        state.ejectQuarter();
     }
 
+    //dispense() 发放糖果方法认为是糖果机器内部的方法，不再单独调用
+    //用户不可能直接要求掉糖果，只能通过旋转手柄，然后等待
     public void turnCrank() {
-        if (state == SOLD) {
-            System.out.println("Turning twice doesn't get you another gumball");
-        }else if (state == NO_QUARTER) {
-            System.out.println("You turned but there's no quarter");
-        }else if (state == SOLD_OUT) {
-            System.out.println("You turned,but there are no gumballs");
-        }else if (state == HAS_QUARTER) {
-            System.out.println("You turned...");
-            state = SOLD;
-            dispense();
-        }
+        state.turnCrank();
+        state.dispense();
     }
 
-    public void dispense() {
-        if (state == SOLD) {
-            System.out.println("A gumball comes rolling out the slot");
-            count--;
-            if (count == 0) {
-                System.out.println("Oops,out of gumballs");
-                state = SOLD_OUT;
-            }else {
-                state = NO_QUARTER;
-            }
-        }else if (state == NO_QUARTER) {
-            System.out.println("You need to pay first");
-        }else if (state == SOLD_OUT) {
-            System.out.println("No gumball dispensed");
-        }else if (state == HAS_QUARTER) {
-            System.out.println("No gumball dispensed");
-        }
-    }
 
     @Override
     public String toString() {
@@ -84,16 +49,68 @@ public class GumballMachine {
         StringBuffer returnValue = new StringBuffer("\nMighty Gumball, Inc.\n" +
                 "Inventory: " + count + " gumballs\n" + "Machine state is: ");
 
-        if (state == SOLD_OUT) {
+        if (state instanceof SoldOutState) {
             returnValue.append("sold out\n");
-        }else if (state == NO_QUARTER) {
+        }else if (state instanceof NoQuarterState) {
             returnValue.append("waiting for quarter\n");
-        }else if (state == HAS_QUARTER) {
+        }else if (state instanceof HasQuarterState) {
             returnValue.append("waiting for turn crank");
-        }else if (state == SOLD) {
+        }else if (state instanceof SoldState) {
             returnValue.append("waiting for quarter\n");
         }
 
         return returnValue.toString();
+    }
+
+
+    public void releaseBall() {
+        System.out.println("A gumball comes rolling out the slot...");
+        if (count != 0) {
+            count--;
+        }
+    }
+
+    public HasQuarterState getHasQuarterState() {
+        return hasQuarterState;
+    }
+
+    public void setHasQuarterState(HasQuarterState hasQuarterState) {
+        this.hasQuarterState = hasQuarterState;
+    }
+
+    public NoQuarterState getNoQuarterState() {
+        return noQuarterState;
+    }
+
+    public void setNoQuarterState(NoQuarterState noQuarterState) {
+        this.noQuarterState = noQuarterState;
+    }
+
+    public SoldOutState getSoldOutState() {
+        return soldOutState;
+    }
+
+    public void setSoldOutState(SoldOutState soldOutState) {
+        this.soldOutState = soldOutState;
+    }
+
+    public SoldState getSoldState() {
+        return soldState;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
