@@ -45,6 +45,18 @@ public class GumballMachine {
     }
 
 
+    public void releaseBall() {
+        System.out.println("A gumball comes rolling out the slot...");
+        if (count != 0) {
+            count--;
+        }
+    }
+
+    public void refill(int count) {
+        this.count = count;
+        state = noQuarterState;
+    }
+
     @Override
     public String toString() {
 
@@ -62,14 +74,6 @@ public class GumballMachine {
         }
 
         return returnValue.toString();
-    }
-
-
-    public void releaseBall() {
-        System.out.println("A gumball comes rolling out the slot...");
-        if (count != 0) {
-            count--;
-        }
     }
 
     public HasQuarterState getHasQuarterState() {

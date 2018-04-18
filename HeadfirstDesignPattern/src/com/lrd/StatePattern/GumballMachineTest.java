@@ -3,7 +3,7 @@ package com.lrd.StatePattern;
 public class GumballMachineTest {
 
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(50);
+        GumballMachine gumballMachine = new GumballMachine(5);
 
         System.out.println(gumballMachine);
 
@@ -13,7 +13,7 @@ public class GumballMachineTest {
         System.out.println(gumballMachine);
 
 
-        for (int i=0;i<40;i++){
+        for (int i=0;i<4;i++){
 
             gumballMachine.insertQuarter();
             gumballMachine.turnCrank();
@@ -23,6 +23,15 @@ public class GumballMachineTest {
             System.out.println(gumballMachine);
 
         }
+
+
+        gumballMachine.refill(3);
+        System.out.println(gumballMachine);
+
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+
+        System.out.println(gumballMachine);
 
 
     }
