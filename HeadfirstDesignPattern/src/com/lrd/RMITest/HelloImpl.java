@@ -10,7 +10,8 @@ public class HelloImpl extends UnicastRemoteObject implements Hello {
     }
 
     @Override
-    public String sayHello(String name) throws RemoteException {
+    public String sayHello(String name) {
         return "Hello, "+name;
     }
+
 }
