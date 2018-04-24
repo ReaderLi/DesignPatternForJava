@@ -36,7 +36,7 @@ public class MatchMakingTestDrive {
         try {
             nonOwnerProxy.setInterests("bowling,Go");
         } catch (Exception e) {
-            System.out.println("Can't set interests from non owner proxy");
+            System.out.println("Can't set interests from non owner proxy!");
         }
 
         nonOwnerProxy.setHotOrNotRating(3);
