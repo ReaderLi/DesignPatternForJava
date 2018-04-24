@@ -1,9 +1,8 @@
-package com.lrd.ProxyPattern;
+package com.lrd.ProxyPattern.RemoteProxyPattern;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;

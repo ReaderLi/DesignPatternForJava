@@ -1,6 +1,4 @@
-package com.lrd.VirtualProxyPattern;
-
-import com.sun.javafx.robot.impl.FXRobotHelper;
+package com.lrd.ProxyPattern.VirtualProxyPattern;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

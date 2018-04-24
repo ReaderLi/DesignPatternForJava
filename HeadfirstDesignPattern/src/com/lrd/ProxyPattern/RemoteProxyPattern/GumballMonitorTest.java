@@ -1,4 +1,4 @@
-package com.lrd.ProxyPattern;
+package com.lrd.ProxyPattern.RemoteProxyPattern;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

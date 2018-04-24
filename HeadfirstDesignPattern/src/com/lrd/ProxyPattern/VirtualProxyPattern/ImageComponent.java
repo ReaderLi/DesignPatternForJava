@@ -1,4 +1,4 @@
-package com.lrd.VirtualProxyPattern;
+package com.lrd.ProxyPattern.VirtualProxyPattern;
 
 import javax.swing.*;
 import java.awt.*;
